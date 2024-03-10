@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feature Input</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <!-- Custom CSS -->
+  <style>
+    .container {
+      margin-top: 50px;
+    }
+    label {
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <h2>Input Features</h2>
+  <form action="/submit" method="post">
+    <div class="form-group">
+      <label for="type">Type</label>
+      <select class="form-control" id="type" name="Type">
+        <option value="2">High (H)</option>
+        <option value="1">Medium (M)</option>
+        <option value="0">Low (L)</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="air_temperature">Air Temperature (K)</label>
+      <input type="number" class="form-control" id="air_temperature" name="Air temperature (K)" placeholder="Enter Air Temperature">
+    </div>
+    <div class="form-group">
+      <label for="process_temperature">Process Temperature (K)</label>
+      <input type="number" class="form-control" id="process_temperature" name="Process temperature (K)" placeholder="Enter Process Temperature">
+    </div>
+    <div class="form-group">
+      <label for="rotational_speed">Rotational Speed (rpm)</label>
+      <input type="number" class="form-control" id="rotational_speed" name="Rotational speed (rpm)" placeholder="Enter Rotational Speed">
+    </div>
+    <div class="form-group">
+      <label for="torque">Torque (Nm)</label>
+      <input type="number" class="form-control" id="torque" name="Torque (Nm)" placeholder="Enter Torque">
+    </div>
+    <div class="form-group">
+      <label for="tool_wear">Tool Wear (min)</label>
+      <input type="number" class="form-control" id="tool_wear" name="Tool wear (min)" placeholder="Enter Tool Wear">
+    </div>
+    <div class="form-group">
+      <label for="heat_dissipation_failure">Heat Dissipation Failure</label>
+      <select class="form-control" id="heat_dissipation_failure" name="Heat Dissipation Failure">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="no_failure">No Failure</label>
+      <select class="form-control" id="no_failure" name="No Failure">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="overstrain_failure">Overstrain Failure</label>
+      <select class="form-control" id="overstrain_failure" name="Overstrain Failure">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="power_failure">Power Failure</label>
+      <select class="form-control" id="power_failure" name="Power Failure">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="random_failures">Random Failures</label>
+      <select class="form-control" id="random_failures" name="Random Failures">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="tool_wear_failure">Tool Wear Failure</label>
+      <select class="form-control" id="tool_wear_failure" name="Tool Wear Failure">
+        <option value="0">No</option>
+        <option value="1">Yes</option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
