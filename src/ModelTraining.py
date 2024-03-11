@@ -2,6 +2,7 @@ import warnings
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score
 import pickle
+import mlflow
 
 
 class ClassifierTuner:
@@ -37,6 +38,13 @@ class ClassifierTuner:
         # Save the best model
         self.best_models[name] = best_model
 
+        # Log parameters and metrics to MLflow
+        with mlflow.start_run() as run:
+            mlflow.log_params(grid_search.best_params_)
+            mlflow.log_metric("best_score", grid_search.best_score_)
+            mlflow.log_metric("test_accuracy", test_accuracy)
+            mlflow.sklearn.log_model(best_model, f"{name}_best_model")
+
     def save_models(self):
         for name, model in self.best_models.items():
             model_filename = f"trained_models/{name}_best_model.pkl"
@@ -45,6 +53,10 @@ class ClassifierTuner:
             print(f"Best parameterized model for {name} dumped to {model_filename}")
 
     def tune_and_evaluate(self, X_train, y_train, X_test, y_test):
+
+        mlflow.set_tracking_uri("http://localhost:5000")  # For a local MLflow server
+        mlflow.set_experiment("Predictive Maintenance")
+
         for name, (classifier, param_grid) in self.classifiers.items():
             print("Tuning hyperparameters for:", name)
             self.tune_hyperparameters(name, classifier, param_grid, X_train, y_train, X_test, y_test)

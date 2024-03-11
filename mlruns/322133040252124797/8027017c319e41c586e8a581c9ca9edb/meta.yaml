@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/322133040252124797/8027017c319e41c586e8a581c9ca9edb/artifacts
+end_time: 1710151079024
+entry_point_name: ''
+experiment_id: '322133040252124797'
+lifecycle_stage: active
+run_id: 8027017c319e41c586e8a581c9ca9edb
+run_name: salty-donkey-469
+run_uuid: 8027017c319e41c586e8a581c9ca9edb
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710151073397
+status: 3
+tags: []
+user_id: BAR_DAR_03

@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1710151210356
+current_stage: None
+description: ''
+last_updated_timestamp: 1710151210356
+name: SGD Classifier_best_model
+run_id: 40bfbf5ae9c34ed38c193079d7b65c67
+run_link: ''
+source: mlflow-artifacts:/322133040252124797/40bfbf5ae9c34ed38c193079d7b65c67/artifacts/SGD
+  Classifier_best_model
+status: READY
+status_message: null
+user_id: null
+version: 1

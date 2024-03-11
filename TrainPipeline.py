@@ -1,4 +1,3 @@
-import os
 from src.DataIngestion import DataIngestion
 from src.DataProcessing import DataProcessing
 from src.ModelTraining import ClassifierTuner
@@ -23,24 +22,25 @@ from sklearn.metrics import accuracy_score
 import numpy as np
 import matplotlib.pyplot as plt
 import pickle
+import os
 
-
+# Parameters are Fine-tuned and set a correct parameters to Decrease computation
 classifiers = {
-    'Logistic Regression': (LogisticRegression(), {'penalty': ['l1', 'l2'], 'C': [0.001, 0.01, 0.1, 1, 10, 100], 'solver': ['liblinear', 'saga']}),
+    # 'Logistic Regression': (LogisticRegression(),  {'C': 1, 'penalty': 'l1', 'solver': 'liblinear'}),
     # 'Decision Tree': (DecisionTreeClassifier(), {'criterion': ['gini', 'entropy'], 'max_depth': [None, 5, 10, 15], 'min_samples_split': [2, 5, 10], 'min_samples_leaf': [1, 2, 4]}),
-    # 'Random Forest': (RandomForestClassifier(), {'n_estimators': [100, 200, 300], 'max_depth': [None, 5, 10, 15], 'min_samples_split': [2, 5, 10], 'min_samples_leaf': [1, 2, 4], 'max_features': ['sqrt', 'log2']}),
-    # 'AdaBoost': (AdaBoostClassifier(), {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 1.0]}),
-    # 'Gradient Boosting': (GradientBoostingClassifier(), {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 1.0], 'max_depth': [3, 5, 7]}),
-    # 'SVM': (SVC(), {'C': [ 0.1, 1, 10, 100], 'kernel': ['poly', 'rbf', 'sigmoid'], 'gamma': ['scale']}),
-    # 'k-NN': (KNeighborsClassifier(), {'n_neighbors': [3, 5, 7, 9], 'weights': ['uniform', 'distance'], 'algorithm': ['auto', 'ball_tree', 'kd_tree', 'brute']}),
+    # 'Random Forest': (RandomForestClassifier(), {'criterion': ['entropy'], 'max_depth':[15], 'min_samples_leaf':[ 2], 'min_samples_split': [5]}),
+    # 'AdaBoost': (AdaBoostClassifier(), {'n_estimators': [100], 'learning_rate': [1.0]}),
+    # 'Gradient Boosting': (GradientBoostingClassifier(), {'learning_rate': 0.1, 'max_depth': 5, 'n_estimators': 100}),
+    # 'SVM': (SVC(), {'C': 100, 'gamma': 'scale', 'kernel': 'poly'}),
+    # 'k-NN': (KNeighborsClassifier(), {'algorithm': 'auto', 'n_neighbors': 3, 'weights': 'distance'}{'algorithm': 'auto', 'n_neighbors': 3, 'weights': 'distance'}),
     # 'Naive Bayes': (GaussianNB(), {}),
-    # 'Neural Network': (MLPClassifier(), {'hidden_layer_sizes': [(100,), (50, 100), (50, 50, 50)], 'activation': ['relu', 'logistic'], 'solver': ['adam'], 'alpha': [0.0001, 0.001, 0.01], 'learning_rate': ['constant', 'invscaling', 'adaptive']}),
+    # 'Neural Network': (MLPClassifier(), {'activation': 'relu', 'alpha': 0.0001, 'hidden_layer_sizes': (100,), 'learning_rate': 'adaptive', 'solver': 'adam'}),
     # 'Linear Discriminant Analysis': (LinearDiscriminantAnalysis(), {}),
     # 'Quadratic Discriminant Analysis': (QuadraticDiscriminantAnalysis(), {}),
-    # 'SGD Classifier': (SGDClassifier(), {'loss': ['hinge', 'log', 'modified_huber', 'squared_hinge', 'perceptron'], 'penalty': ['l1', 'l2', 'elasticnet'], 'alpha': [0.0001, 0.001, 0.01, 0.1, 1]}),
-    # 'XGBoost': (XGBClassifier(error_score='raise'), {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 1.0], 'max_depth': [3, 5, 7]}),
-    # 'LightGBM': (LGBMClassifier(), {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 1.0], 'max_depth': [3, 5, 7]}),
-    # 'CatBoost': (CatBoostClassifier(), {'iterations': [50, 100, 200], 'learning_rate': [0.01, 0.1, 1.0], 'depth': [3, 5, 7]})
+    'SGD Classifier': (SGDClassifier(),  {'alpha': [1], 'loss': ['squared_hinge'], 'penalty': ['elasticnet']}),
+    'XGBoost': (XGBClassifier(error_score='raise'), {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 1.0], 'max_depth': [3, 5, 7]}),
+    'LightGBM': (LGBMClassifier(), {'n_estimators': [50, 100, 200], 'learning_rate': [0.01, 0.1, 1.0], 'max_depth': [3, 5, 7]}),
+    'CatBoost': (CatBoostClassifier(),  {'depth': [5], 'iterations': [100], 'learning_rate': [1.0]})
 }
 
 

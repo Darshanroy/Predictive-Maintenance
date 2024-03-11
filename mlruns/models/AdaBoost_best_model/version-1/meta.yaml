@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1710148890859
+current_stage: None
+description: ''
+last_updated_timestamp: 1710148890859
+name: AdaBoost_best_model
+run_id: a20a5580cf154e9d8e2e1b1154b8d481
+run_link: ''
+source: mlflow-artifacts:/322133040252124797/a20a5580cf154e9d8e2e1b1154b8d481/artifacts/AdaBoost_best_model
+status: READY
+status_message: null
+user_id: null
+version: 1

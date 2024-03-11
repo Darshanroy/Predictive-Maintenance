@@ -14,18 +14,49 @@
     .prediction {
       margin-bottom: 20px;
     }
+    .box {
+      border: 2px solid #007bff;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      background-color: #f8f9fa;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .box img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 15px;
+    }
+    .box h4 {
+      color: #007bff;
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      text-align: center;
+    }
+    .box p {
+      font-size: 18px;
+      margin-bottom: 0;
+      text-align: center;
+    }
   </style>
 </head>
 <body>
 
 <div class="container">
   <h2>Prediction Results</h2>
-  {% for model_name, prediction in predictions.items() %}
   <div class="prediction">
-    <h4>{{ model_name }}</h4>
-    <p><strong>Prediction:</strong> {{ prediction }}</p>
+    <div class="row">
+      {% for model_name, prediction in predictions.items() %}
+      <div class="col-lg-3 col-md-6">
+        <div class="box">
+          <h4>{{ model_name|replace(".pkl", "") }}</h4>
+          <p><strong>Prediction:</strong> {{ prediction }}</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
   </div>
-  {% endfor %}
 </div>
 
 <!-- Bootstrap JS and dependencies -->

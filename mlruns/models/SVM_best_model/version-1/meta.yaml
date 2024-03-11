@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1710149384709
+current_stage: None
+description: ''
+last_updated_timestamp: 1710149384709
+name: SVM_best_model
+run_id: f3471e183bde4b299d8e0dd7c8effe78
+run_link: ''
+source: mlflow-artifacts:/322133040252124797/f3471e183bde4b299d8e0dd7c8effe78/artifacts/SVM_best_model
+status: READY
+status_message: null
+user_id: null
+version: 1

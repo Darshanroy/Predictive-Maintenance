@@ -1,0 +1,15 @@
+artifact_uri: mlflow-artifacts:/322133040252124797/f3471e183bde4b299d8e0dd7c8effe78/artifacts
+end_time: 1710149287907
+entry_point_name: ''
+experiment_id: '322133040252124797'
+lifecycle_stage: active
+run_id: f3471e183bde4b299d8e0dd7c8effe78
+run_name: honorable-squid-668
+run_uuid: f3471e183bde4b299d8e0dd7c8effe78
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1710149278668
+status: 3
+tags: []
+user_id: BAR_DAR_03

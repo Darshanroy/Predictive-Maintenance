@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1710148734790
+current_stage: None
+description: ''
+last_updated_timestamp: 1710148734790
+name: Decision Tree_best_model
+run_id: a4b29a1062b34b2caddc5499ca738fc9
+run_link: ''
+source: mlflow-artifacts:/322133040252124797/a4b29a1062b34b2caddc5499ca738fc9/artifacts/Decision
+  Tree_best_model
+status: READY
+status_message: null
+user_id: null
+version: 1

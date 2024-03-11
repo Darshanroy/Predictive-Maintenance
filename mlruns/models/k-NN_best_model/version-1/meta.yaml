@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1710150108557
+current_stage: None
+description: ''
+last_updated_timestamp: 1710150108557
+name: k-NN_best_model
+run_id: 2fa99608845746fb83a8abe265e6cb6e
+run_link: ''
+source: mlflow-artifacts:/322133040252124797/2fa99608845746fb83a8abe265e6cb6e/artifacts/k-NN_best_model
+status: READY
+status_message: null
+user_id: null
+version: 1

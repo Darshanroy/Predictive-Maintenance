@@ -1,0 +1,13 @@
+aliases: []
+creation_timestamp: 1710151190651
+current_stage: None
+description: ''
+last_updated_timestamp: 1710151190651
+name: LightGBM_best_model
+run_id: 0c9656827f684dcda6ea57cd61e63ebb
+run_link: ''
+source: mlflow-artifacts:/322133040252124797/0c9656827f684dcda6ea57cd61e63ebb/artifacts/LightGBM_best_model
+status: READY
+status_message: null
+user_id: null
+version: 1

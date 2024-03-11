@@ -1,0 +1,14 @@
+aliases: []
+creation_timestamp: 1710149048923
+current_stage: None
+description: ''
+last_updated_timestamp: 1710149048923
+name: Gradient Boosting_best_model
+run_id: bc1253ce9d76490ab6af515b2649b0fa
+run_link: ''
+source: mlflow-artifacts:/322133040252124797/bc1253ce9d76490ab6af515b2649b0fa/artifacts/Gradient
+  Boosting_best_model
+status: READY
+status_message: null
+user_id: null
+version: 1
